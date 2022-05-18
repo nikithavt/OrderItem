@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "newcluster-c787"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "newcluster-c787"
+  template:
+    metadata:
+      labels:
+        app: "newcluster-c787"
+    spec:
+      containers:
+        - name: "newcluster-c787"
+          image: "newregistry719.azurecr.io/newcluster"
+          ports:
+          - containerPort: 80
